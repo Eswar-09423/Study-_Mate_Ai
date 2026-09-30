@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>StudyMate AI</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     AUTHENTICATION
+================================================== -->
+
+<div
+    id="authPage"
+    class="auth-page"
+>
+
+    <div class="auth-card">
+
+        <div class="auth-logo">
+            🎓
+        </div>
+
+        <h1>
+            StudyMate <span>AI</span>
+        </h1>
+
+        <p class="auth-subtitle">
+            Learn • Ask • Understand • Grow
+        </p>
+
+
+        <!-- CREATE ACCOUNT -->
+
+        <div
+            id="registerBox"
+            class="auth-box"
+        >
+
+            <h2>
+                Create Account 📝
+            </h2>
+
+            <p>
+                Create your StudyMate AI account.
+            </p>
+
+            <label>
+                Your Name
+            </label>
+
+            <input
+                id="registerName"
+                type="text"
+                placeholder="Enter your name"
+            >
+
+            <label>
+                Email
+            </label>
+
+            <input
+                id="registerEmail"
+                type="email"
+                placeholder="Enter your email"
+            >
+
+            <label>
+                Password
+            </label>
+
+            <input
+                id="registerPassword"
+                type="password"
+                placeholder="Create a password"
+            >
+
+            <button
+                id="registerBtn"
+                class="auth-button"
+            >
+                Create Account →
+            </button>
+
+            <p
+                id="registerError"
+                class="auth-error"
+            ></p>
+
+            <p class="switch-text">
+
+                Already have an account?
+
+                <button
+                    id="showLoginBtn"
+                    class="link-button"
+                >
+                    Sign In
+                </button>
+
+            </p>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <div
+            id="loginBox"
+            class="auth-box hidden"
+        >
+
+            <h2>
+                Welcome Back 👋
+            </h2>
+
+            <p>
+                Sign in to continue learning.
+            </p>
+
+            <label>
+                Email
+            </label>
+
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="Enter your email"
+            >
+
+            <label>
+                Password
+            </label>
+
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="Enter your password"
+            >
+
+            <button
+                id="loginBtn"
+                class="auth-button"
+            >
+                Sign In →
+            </button>
+
+            <p
+                id="loginError"
+                class="auth-error"
+            ></p>
+
+            <p class="switch-text">
+
+                Don't have an account?
+
+                <button
+                    id="showRegisterBtn"
+                    class="link-button"
+                >
+                    Create Account
+                </button>
+
+            </p>
+
+        </div>
+
+
+        <div class="auth-footer">
+
+            🎓 Your personal AI learning assistant
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     CHAT APPLICATION
+================================================== -->
+
+<div
+    id="chatApp"
+    class="app hidden"
+>
+
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div class="logo">
+
+            🎓
+
+            <span>
+                StudyMate <b>AI</b>
+            </span>
+
+        </div>
+
+
+        <div class="top-right">
+
+            <span
+                id="studentName"
+                class="student"
+            >
+                👤 Student
+            </span>
+
+
+            <button
+                id="themeBtn"
+                class="top-btn"
+            >
+                🌙
+            </button>
+
+
+            <button
+                id="logoutBtn"
+                class="top-btn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN LAYOUT
+    ================================================== -->
+
+    <div class="layout">
+
+
+        <!-- ==================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- NEW CHAT -->
+
+            <button
+                id="newChatBtn"
+                class="new-chat"
+                type="button"
+            >
+                ＋ New Chat
+            </button>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                🔍
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search chats"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- PREVIOUS CHATS -->
+
+            <h4>
+                RECENT CHATS
+            </h4>
+
+
+            <div
+                id="chatList"
+                class="chat-list"
+            >
+
+                <!-- Previous chats will appear here -->
+
+            </div>
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+
+                <button
+                    id="clearBtn"
+                    type="button"
+                >
+                    🗑 Clear History
+                </button>
+
+
+                <small>
+                    Learn • Ask • Understand • Grow
+                </small>
+
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ==================================================
+             MAIN CHAT
+        ================================================== -->
+
+        <main class="main">
+
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <div>
+
+                    <h1>
+                        ✨ AI Student Assistant
+                    </h1>
+
+                    <p>
+                        Ask any doubt. Get a clear explanation.
+                    </p>
+
+                </div>
+
+
+                <div class="status">
+
+                    <span></span>
+
+                    AI Online
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 MESSAGES
+            ================================================== -->
+
+            <section
+                id="messages"
+                class="messages"
+            ></section>
+
+
+
+            <!-- ==================================================
+                 TYPING INDICATOR
+            ================================================== -->
+
+            <div
+                id="typing"
+                class="typing hidden"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                StudyMate is thinking...
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 MESSAGE COMPOSER
+            ================================================== -->
+
+            <form
+                id="chatForm"
+                class="composer"
+            >
+
+                <textarea
+                    id="messageInput"
+                    rows="1"
+                    placeholder="Ask any doubt..."
+                ></textarea>
+
+
+                <button
+                    type="button"
+                    id="micBtn"
+                    class="round"
+                >
+                    🎤
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="send"
+                >
+                    ➤
+                </button>
+
+            </form>
+
+
+            <div class="hint">
+
+                Enter to send • Shift+Enter for new line
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     SHARE MODAL
+================================================== -->
+
+<div
+    id="shareModal"
+    class="modal hidden"
+>
+
+    <div class="modal-card">
+
+        <button
+            id="closeModal"
+            class="close"
+        >
+            ×
+        </button>
+
+
+        <h2>
+            🔗 Share Answer
+        </h2>
+
+
+        <p>
+            Choose an option.
+        </p>
+
+
+        <div class="share-grid">
+
+
+            <button id="copyAnswer">
+                📋 Copy Answer
+            </button>
+
+
+            <button id="nativeShare">
+                📤 Share
+            </button>
+
+
+            <button id="emailShare">
+                📧 Email
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+     LOAD ONLY ONCE
+================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

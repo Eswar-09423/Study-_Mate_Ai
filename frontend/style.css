@@ -1,0 +1,2147 @@
+```css
+/* =========================================================
+   STUDYMATE AI
+   MODERN STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f5f7ff;
+
+    color: #202124;
+
+    min-height: 100vh;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   AUTHENTICATION PAGE
+========================================================= */
+
+.auth-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(102, 126, 234, 0.35),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(118, 75, 162, 0.35),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f8f5ff
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.auth-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(102, 126, 234, 0.12);
+
+    top: -100px;
+
+    left: -100px;
+
+    animation:
+        floatCircle 7s ease-in-out infinite;
+}
+
+
+.auth-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(118, 75, 162, 0.10);
+
+    right: -120px;
+
+    bottom: -120px;
+
+    animation:
+        floatCircle 9s ease-in-out infinite reverse;
+}
+
+
+@keyframes floatCircle {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(25px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   AUTH CARD
+========================================================= */
+
+.auth-card {
+
+    width: 100%;
+
+    max-width: 450px;
+
+    padding: 42px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(50, 50, 100, 0.18);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        cardAppear 0.7s ease;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   AUTH LOGO
+========================================================= */
+
+.auth-logo {
+
+    width: 80px;
+
+    height: 80px;
+
+    margin:
+        0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 24px;
+
+    font-size: 42px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(102, 126, 234, 0.35);
+
+    animation:
+        logoFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+
+/* =========================================================
+   AUTH TEXT
+========================================================= */
+
+.auth-card h1 {
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    color: #202124;
+}
+
+
+.auth-card h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #667eea,
+            #764ba2
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.auth-subtitle {
+
+    margin-top: 8px;
+
+    margin-bottom: 28px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+.auth-box h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 8px;
+}
+
+
+.auth-box > p:not(.auth-error):not(.switch-text) {
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.auth-box label {
+
+    display: block;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #444;
+
+    margin:
+        15px 0 7px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.auth-box input {
+
+    width: 100%;
+
+    padding:
+        14px 15px;
+
+    border:
+        1px solid #e1e4ef;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: #fafbff;
+
+    color: #222;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.auth-box input:focus {
+
+    border-color: #667eea;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(102, 126, 234, 0.12);
+}
+
+
+.auth-box input::placeholder {
+
+    color: #aaa;
+}
+
+
+/* =========================================================
+   AUTH BUTTON
+========================================================= */
+
+.auth-button {
+
+    width: 100%;
+
+    margin-top: 23px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(102, 126, 234, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.auth-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(102, 126, 234, 0.32);
+}
+
+
+.auth-button:active {
+
+    transform:
+        translateY(0);
+}
+
+
+.auth-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   AUTH ERROR
+========================================================= */
+
+.auth-error {
+
+    min-height: 22px;
+
+    margin-top: 10px;
+
+    color: #d93025 !important;
+
+    font-size: 13px !important;
+}
+
+
+/* =========================================================
+   SWITCH LOGIN / REGISTER
+========================================================= */
+
+.switch-text {
+
+    margin-top: 20px;
+
+    color: #777 !important;
+
+    font-size: 14px;
+}
+
+
+.link-button {
+
+    border: none;
+
+    background: none;
+
+    color: #667eea;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-left: 4px;
+}
+
+
+.link-button:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   AUTH FOOTER
+========================================================= */
+
+.auth-footer {
+
+    margin-top: 28px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid #eee;
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION
+========================================================= */
+
+.app {
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #f7f8fc;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 25px;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border-bottom:
+        1px solid #e8eaf1;
+
+    box-shadow:
+        0 3px 15px
+        rgba(0, 0, 0, 0.04);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    color: #24262d;
+}
+
+
+.logo:first-letter {
+
+    font-size: 28px;
+}
+
+
+.logo b {
+
+    color: #667eea;
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.top-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.student {
+
+    padding:
+        9px 13px;
+
+    background: #f1f3ff;
+
+    color: #5968c9;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.top-btn {
+
+    border: 1px solid #e4e6ee;
+
+    background: white;
+
+    padding:
+        9px 13px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        0.2s ease;
+}
+
+
+.top-btn:hover {
+
+    background: #f1f3ff;
+
+    border-color: #667eea;
+
+    color: #667eea;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.layout {
+
+    flex: 1;
+
+    display: flex;
+
+    min-height: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    width: 270px;
+
+    background: #ffffff;
+
+    border-right:
+        1px solid #e8eaf1;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+}
+
+
+/* =========================================================
+   NEW CHAT
+========================================================= */
+
+.new-chat {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(102, 126, 234, 0.25);
+
+    transition:
+        0.2s ease;
+}
+
+
+.new-chat:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+
+    margin-top: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        10px 12px;
+
+    border:
+        1px solid #e2e4ed;
+
+    border-radius: 11px;
+
+    background: #fafbff;
+}
+
+
+.search-box input {
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    width: 100%;
+
+    font-size: 13px;
+}
+
+
+.search-box:focus-within {
+
+    border-color: #667eea;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(102, 126, 234, 0.08);
+}
+
+
+/* =========================================================
+   RECENT CHAT TITLE
+========================================================= */
+
+.sidebar h4 {
+
+    margin-top: 25px;
+
+    margin-bottom: 12px;
+
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CHAT LIST
+========================================================= */
+
+.chat-list {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding-right: 3px;
+}
+
+
+.chat-list::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+.chat-list::-webkit-scrollbar-thumb {
+
+    background: #ddd;
+
+    border-radius: 10px;
+}
+
+
+.chat-item {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    text-align: left;
+
+    padding:
+        11px 10px;
+
+    border-radius: 10px;
+
+    margin-bottom: 5px;
+
+    cursor: pointer;
+
+    color: #555;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    transition:
+        0.2s ease;
+}
+
+
+.chat-item:hover {
+
+    background: #f1f3ff;
+
+    color: #5968c9;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid #eee;
+
+    text-align: center;
+}
+
+
+.sidebar-bottom button {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #888;
+
+    padding: 9px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+.sidebar-bottom button:hover {
+
+    background: #fff1f1;
+
+    color: #d93025;
+}
+
+
+.sidebar-bottom small {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #aaa;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MAIN CHAT AREA
+========================================================= */
+
+.main {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fafbff,
+            #f6f7fb
+        );
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    padding:
+        25px 35px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.hero h1 {
+
+    font-size: 24px;
+
+    color: #252733;
+
+    margin-bottom: 5px;
+}
+
+
+.hero p {
+
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 12px;
+
+    border-radius: 20px;
+
+    background: #ecfff3;
+
+    color: #16834c;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.status span {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #20c879;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(32, 200, 121, 0.12);
+
+    animation:
+        onlinePulse 1.8s infinite;
+}
+
+
+@keyframes onlinePulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(32, 200, 121, 0.35);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 7px
+            rgba(32, 200, 121, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(32, 200, 121, 0);
+    }
+
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.messages {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding:
+        10px 35px 25px;
+
+    scroll-behavior: smooth;
+}
+
+
+.messages::-webkit-scrollbar {
+
+    width: 7px;
+}
+
+
+.messages::-webkit-scrollbar-thumb {
+
+    background: #d8dbe7;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message {
+
+    max-width: 820px;
+
+    margin-bottom: 22px;
+
+    animation:
+        messageAppear 0.3s ease;
+}
+
+
+@keyframes messageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.message.user {
+
+    margin-left: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+}
+
+
+.message.assistant {
+
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   MESSAGE BUBBLE
+========================================================= */
+
+.bubble {
+
+    display: inline-block;
+
+    max-width: 100%;
+
+    padding:
+        15px 18px;
+
+    border-radius: 17px;
+
+    line-height: 1.65;
+
+    font-size: 15px;
+
+    word-wrap: break-word;
+}
+
+
+.message.user .bubble {
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    color: white;
+
+    border-bottom-right-radius: 5px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(102, 126, 234, 0.18);
+}
+
+
+.message.assistant .bubble {
+
+    background: white;
+
+    color: #34363e;
+
+    border:
+        1px solid #e8e9f0;
+
+    border-bottom-left-radius: 5px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(40, 45, 70, 0.05);
+}
+
+
+/* =========================================================
+   MESSAGE ACTIONS
+========================================================= */
+
+.message-actions {
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 8px;
+}
+
+
+.message-actions button {
+
+    border:
+        1px solid #e3e5ed;
+
+    background: white;
+
+    color: #777;
+
+    padding:
+        6px 10px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.message-actions button:hover {
+
+    color: #667eea;
+
+    border-color: #667eea;
+
+    background: #f5f6ff;
+}
+
+
+/* =========================================================
+   TYPING
+========================================================= */
+
+.typing {
+
+    margin:
+        0 35px 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+.typing span {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #667eea;
+
+    animation:
+        typingAnimation 1.3s infinite;
+}
+
+
+.typing span:nth-child(2) {
+
+    animation-delay:
+        0.2s;
+}
+
+
+.typing span:nth-child(3) {
+
+    animation-delay:
+        0.4s;
+}
+
+
+@keyframes typingAnimation {
+
+    0%,
+    60%,
+    100% {
+
+        transform:
+            translateY(0);
+
+        opacity: 0.5;
+
+    }
+
+    30% {
+
+        transform:
+            translateY(-5px);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   COMPOSER
+========================================================= */
+
+.composer {
+
+    margin:
+        0 35px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 9px;
+
+    padding:
+        10px;
+
+    background: white;
+
+    border:
+        1px solid #e1e4ed;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(30, 35, 60, 0.07);
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.composer:focus-within {
+
+    border-color: #667eea;
+
+    box-shadow:
+        0 10px 35px
+        rgba(102, 126, 234, 0.12);
+}
+
+
+.composer textarea {
+
+    flex: 1;
+
+    resize: none;
+
+    border: none;
+
+    outline: none;
+
+    padding:
+        11px 10px;
+
+    max-height: 120px;
+
+    background: transparent;
+
+    color: #222;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+}
+
+
+.composer textarea::placeholder {
+
+    color: #aaa;
+}
+
+
+/* =========================================================
+   ROUND BUTTON
+========================================================= */
+
+.round {
+
+    width: 43px;
+
+    height: 43px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f0f2f8;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition:
+        0.2s ease;
+}
+
+
+.round:hover {
+
+    background: #e6e9f7;
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.send {
+
+    width: 43px;
+
+    height: 43px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    color: white;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 7px 18px
+        rgba(102, 126, 234, 0.3);
+
+    transition:
+        0.2s ease;
+}
+
+
+.send:hover {
+
+    transform:
+        scale(1.07)
+        rotate(-5deg);
+}
+
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.hint {
+
+    text-align: center;
+
+    padding:
+        9px 10px 13px;
+
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SHARE MODAL
+========================================================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(15, 18, 35, 0.55);
+
+    backdrop-filter:
+        blur(6px);
+
+    z-index: 100;
+}
+
+
+.modal-card {
+
+    width: 90%;
+
+    max-width: 420px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.25);
+
+    position: relative;
+
+    animation:
+        modalAppear 0.3s ease;
+}
+
+
+@keyframes modalAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.9)
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+.modal-card h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 8px;
+}
+
+
+.modal-card p {
+
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.close {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 13px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f2f3f7;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    color: #777;
+}
+
+
+.close:hover {
+
+    background: #ffecec;
+
+    color: #d93025;
+}
+
+
+/* =========================================================
+   SHARE GRID
+========================================================= */
+
+.share-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap: 10px;
+}
+
+
+.share-grid button {
+
+    padding: 13px;
+
+    border:
+        1px solid #e2e4ed;
+
+    border-radius: 11px;
+
+    background: #fafbff;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    color: #444;
+
+    transition:
+        0.2s ease;
+}
+
+
+.share-grid button:hover {
+
+    background: #f1f3ff;
+
+    border-color: #667eea;
+
+    color: #667eea;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark {
+
+    background: #101116;
+
+    color: #f2f2f5;
+}
+
+
+body.dark .app {
+
+    background: #101116;
+}
+
+
+body.dark .topbar {
+
+    background: #18191f;
+
+    border-color: #292b34;
+}
+
+
+body.dark .logo {
+
+    color: white;
+}
+
+
+body.dark .student {
+
+    background: #252738;
+
+    color: #aab4ff;
+}
+
+
+body.dark .top-btn {
+
+    background: #22232a;
+
+    color: white;
+
+    border-color: #333640;
+}
+
+
+body.dark .sidebar {
+
+    background: #17181e;
+
+    border-color: #292b34;
+}
+
+
+body.dark .search-box {
+
+    background: #202128;
+
+    border-color: #333640;
+}
+
+
+body.dark .search-box input {
+
+    color: white;
+}
+
+
+body.dark .chat-item {
+
+    color: #bbb;
+}
+
+
+body.dark .chat-item:hover {
+
+    background: #27293a;
+
+    color: #aab4ff;
+}
+
+
+body.dark .main {
+
+    background:
+        linear-gradient(
+            180deg,
+            #14151b,
+            #101116
+        );
+}
+
+
+body.dark .hero h1 {
+
+    color: white;
+}
+
+
+body.dark .hero p {
+
+    color: #999;
+}
+
+
+body.dark .message.assistant .bubble {
+
+    background: #1d1e25;
+
+    color: #e7e7eb;
+
+    border-color: #30323c;
+}
+
+
+body.dark .message-actions button {
+
+    background: #202128;
+
+    color: #aaa;
+
+    border-color: #343640;
+}
+
+
+body.dark .composer {
+
+    background: #1d1e25;
+
+    border-color: #343640;
+}
+
+
+body.dark .composer textarea {
+
+    color: white;
+}
+
+
+body.dark .round {
+
+    background: #292b35;
+
+    color: white;
+}
+
+
+body.dark .modal-card {
+
+    background: #1d1e25;
+
+    color: white;
+}
+
+
+body.dark .modal-card p {
+
+    color: #aaa;
+}
+
+
+body.dark .share-grid button {
+
+    background: #25262e;
+
+    color: #ddd;
+
+    border-color: #373944;
+}
+
+
+body.dark .close {
+
+    background: #292b35;
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+
+        width: 220px;
+
+    }
+
+
+    .hero {
+
+        padding:
+            20px 22px 15px;
+
+    }
+
+
+    .messages {
+
+        padding:
+            10px 22px 20px;
+
+    }
+
+
+    .composer {
+
+        margin:
+            0 22px;
+
+    }
+
+
+    .typing {
+
+        margin-left: 22px;
+
+        margin-right: 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .topbar {
+
+        height: 62px;
+
+        padding:
+            0 14px;
+
+    }
+
+
+    .logo {
+
+        font-size: 18px;
+
+    }
+
+
+    .student {
+
+        display: none;
+
+    }
+
+
+    .top-btn {
+
+        padding:
+            8px 10px;
+
+    }
+
+
+    .sidebar {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        padding:
+            17px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 19px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 12px;
+
+    }
+
+
+    .status {
+
+        padding:
+            6px 9px;
+
+        font-size: 10px;
+
+    }
+
+
+    .messages {
+
+        padding:
+            5px 15px 15px;
+
+    }
+
+
+    .message {
+
+        max-width: 95%;
+
+    }
+
+
+    .bubble {
+
+        font-size: 14px;
+
+        padding:
+            12px 14px;
+
+    }
+
+
+    .composer {
+
+        margin:
+            0 12px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .hint {
+
+        font-size: 9px;
+
+    }
+
+
+    .auth-card {
+
+        padding: 30px 22px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .auth-card h1 {
+
+        font-size: 29px;
+
+    }
+
+
+    .auth-logo {
+
+        width: 70px;
+
+        height: 70px;
+
+        font-size: 35px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .topbar {
+
+        padding:
+            0 10px;
+
+    }
+
+
+    .hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+    }
+
+
+    .status {
+
+        align-self: flex-start;
+
+    }
+
+
+    .round,
+    .send {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+}
+```
